@@ -53,14 +53,18 @@ setup(
     install_requires=[
         "setuptools",
         "Products.CMFPlone",
-        "plone.api",
+        "Products.CMFCore",
+        "Products.GenericSetup",
+        "zope.i18nmessageid",
+        "zope.interface",
+        "zope.publisher",
     ],
     extras_require={
         "test": [
             "zest.releaser[recommended]",
             "zestreleaser.towncrier",
             "plone.app.testing",
-            "plone.restapi[test]",
+            "plone.app.robotframework[debug]",
             "pytest",
             "pytest-cov",
             "pytest-plone>=0.5.0",
