@@ -1,0 +1,32 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="collective.outputfilters.socialmediaconsent"
+    >
+
+  <genericsetup:registerProfile
+      name="default"
+      title="Social Embedding Consent Outputfilter: Install"
+      description="Package to configure a new Social Embedding Consent Outputfilter site"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      directory="profiles/default"
+      />
+
+  <genericsetup:registerProfile
+      name="uninstall"
+      title="Social Embedding Consent Outputfilter: Uninstall"
+      description="Uninstall Social Embedding Consent Outputfilter setup."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      directory="profiles/uninstall"
+      />
+
+  <!-- Hide Uninstall Profile-->
+  <utility
+      factory=".setuphandlers.HiddenProfiles"
+      name="collective.outputfilters.socialmediaconsent"
+      />
+
+
+  <include package=".upgrades" />
+
+</configure>
