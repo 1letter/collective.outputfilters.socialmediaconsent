@@ -33,6 +33,10 @@ use_mxdev = true
 test_deps_additional = ""
 constraints_file = "https://dist.plone.org/release/6.1-latest/constraints.txt"
 constrain_package_deps = true
+test_environment_variables = """
+    zope_i18n_compile_mo_files=True
+"""
+
 
 [github]
 py_versions = "[\"3.12\", \"3.11\", \"3.10\"]"
