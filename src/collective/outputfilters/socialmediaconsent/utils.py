@@ -11,8 +11,8 @@ def extract_domain(url):
         # Extract the domain from the named group "domain"
         domain = match.group("domain")
         return domain
-    else:
-        return None
+
+    return None
 
 
 def iframe_youtube(src):
@@ -23,4 +23,5 @@ def iframe_youtube(src):
         return True
     if "youtube.com" in domain:
         return True
+
     return False
