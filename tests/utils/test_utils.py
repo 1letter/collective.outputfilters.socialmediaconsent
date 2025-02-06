@@ -35,6 +35,7 @@ def test_iframe_youtube(domain, expected):
         ("https://plone.org", "plone.org"),
         ("http://www.plone.org", "plone.org"),
         ("https://www.plone.org", "plone.org"),
+        ("https:/www.plone.org", None),
     ],
 )
 def test_extract_domain(markup, expected):
