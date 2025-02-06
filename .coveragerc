@@ -1,0 +1,7 @@
+[report]
+omit =
+    */upgrades/*
+    */locales/*
+
+[html]
+directory = report
