@@ -1,0 +1,23 @@
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+     xmlns:metal="http://xml.zope.org/namespaces/metal"
+     xmlns:tal="http://xml.zope.org/namespaces/tal"
+     lang="en"
+     xml:lang="en"
+     tal:omit-tag=""
+     i18n:domain="collective.outpufilters.socialmediaconsent"
+>
+  <div class="form-check placeholder-socialmedia-consent"
+       data-html="${options/data_html}"
+  >
+    <input class="form-check-input"
+           id="flexCheckDefault"
+           type="checkbox"
+           value="show"
+    />
+    <label class="form-check-label"
+           for="flexCheckDefault"
+           i18n:translate="consent_message_youtube"
+    >...</label>
+  </div>
+</div>
