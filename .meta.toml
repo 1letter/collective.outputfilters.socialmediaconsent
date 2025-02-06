@@ -11,7 +11,7 @@ codespell_ignores = "vew"
 dependencies_mappings = [
   "beautifulsoup4 = ['bs4']",
 ]
-dependencies_ignores = "['plone.app.iterate', 'plone.app.upgrade', 'plone.volto', 'zestreleaser.towncrier', 'zest.releaser', 'pytest-cov','pytest']"
+dependencies_ignores = "['plone.app.iterate', 'plone.app.upgrade', 'plone.volto', 'zestreleaser.towncrier', 'zest.releaser', 'pytest-cov','pytest', 'Products.Five']"
 
 [gitignore]
 extra_lines = """

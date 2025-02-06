@@ -51,6 +51,8 @@ setup(
     zip_safe=False,
     python_requires=">=3.8",
     install_requires=[
+        "beautifulsoup4",
+        "plone.outputfilters",
         "setuptools",
         "Products.CMFPlone",
         "Products.CMFCore",
