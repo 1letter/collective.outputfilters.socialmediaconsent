@@ -15,6 +15,12 @@
   <include file="profiles.zcml" />
   <include file="permissions.zcml" />
 
-  <!-- -*- extra stuff goes here -*- -->
+  <adapter
+      factory=".filter.SocialMediaConsentFilter"
+      provides="collective.outputfilters.socialmediaconsent.interfaces.ISocialMediaConsentFilter"
+      for="*
+           *"
+      name="social_media_consent_filter"
+      />
 
 </configure>
