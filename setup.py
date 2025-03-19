@@ -73,8 +73,9 @@ setup(
         ],
     },
     entry_points="""
-    [z3c.autoinclude.plugin]
+    [plone.autoinclude.plugin]
     target = plone
+    module = collective.outputfilters.socialmediaconsent
     [console_scripts]
     update_locale = collective.outputfilters.socialmediaconsent.locales.update:update_locale
     """,
