@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<registry xmlns:i18n="http://xml.zope.org/namespaces/i18n"
-          i18n:domain="collective.outputfilters.socialmediaconsent"
->
-
-  <!-- -*- extra stuff goes here -*- -->
-
+<registry>
+  <records interface="plone.base.interfaces.resources.IBundleRegistry"
+           prefix="plone.bundles/collective.outputfilters.socialmediaconsent"
+  >
+    <value key="enabled">True</value>
+    <value key="jscompilation">++plone++collective.outputfilters.socialmediaconsent/collective.outputfilters.socialmediaconsent.min.js</value>
+    <value key="load_async">True</value>
+  </records>
 </registry>

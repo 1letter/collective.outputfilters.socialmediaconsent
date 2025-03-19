@@ -7,6 +7,21 @@ import logging
 
 PACKAGE_NAME = "collective.outputfilters.socialmediaconsent"
 
+VALID_TAGS = ["input", "label", "iframe"]
+
+CUSTOM_ATTRIBUTES = [
+    "width",
+    "height",
+    "src",
+    "title",
+    "frameborder",
+    "allow",
+    "sandbox",
+    "referrerpolicy",
+    "allowfullscreen",
+    "data-cos",
+]
+
 _ = MessageFactory(PACKAGE_NAME)
 
 logger = logging.getLogger(PACKAGE_NAME)
