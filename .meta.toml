@@ -24,6 +24,8 @@ robot_report.html
 forest.dot
 forest.json
 .lock
+playwright-log.txt
+Scenario*
 """
 
 [tox]
