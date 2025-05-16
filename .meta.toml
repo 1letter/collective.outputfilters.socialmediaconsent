@@ -27,6 +27,8 @@ forest.json
 """
 
 [tox]
+test_runner = "zope.testrunner"
+test_path = "/src"
 test_matrix = { "6.1" = ["3.13", "3.10"], "6.0" = ["3.13", "3.9"] }
 use_mxdev = false
 constraints_files = { "6.1" = "https://dist.plone.org/release/6.1-latest/constraints.txt", "6.0" = "https://dist.plone.org/release/6.0-latest/constraints.txt" }
