@@ -17,6 +17,7 @@ exclude *-mxdev.txt
 exclude Dockerfile
 exclude mx.ini
 exclude Makefile
+exclude playwright-log.txt
 recursive-exclude frontend *
 exclude instance.yaml
 global-exclude *.pyc

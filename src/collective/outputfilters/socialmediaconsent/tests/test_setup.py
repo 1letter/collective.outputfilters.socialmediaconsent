@@ -46,6 +46,8 @@ class TestSetup(unittest.TestCase):
         from plone.registry.interfaces import IRegistry
         from zope.component import getUtility
 
+        import json
+
         registry = getUtility(IRegistry)
 
         record = registry.records.get("plone.valid_tags")
@@ -61,6 +63,19 @@ class TestSetup(unittest.TestCase):
                 record.value,
                 f"{valid_tag} should be in 'plone.custom_attributes'",
             )
+        record = registry.records.get("plone.other_settings")
+        settings = json.loads(record.value)
+        self.assertIn(
+            "sandbox_iframes",
+            settings.keys(),
+            "sandbox_iframes should be in 'plone.other_settings'",
+        )
+        self.assertTrue(settings.get("sandbox_iframes"))
+        self.assertIn(
+            "sandbox_iframes_exclusions",
+            settings.keys(),
+            "sandbox_iframes_exclusions should be in 'plone.other_settings'",
+        )
 
     def test_bundle_registration(self):
         from plone.registry.interfaces import IRegistry

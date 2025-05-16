@@ -71,6 +71,7 @@ setup(
             "plone.base",
             "plone.browserlayer",
             "plone.testing",
+            "robotsuite",
             "transaction",
             "zest.releaser[recommended]",
             "zestreleaser.towncrier",
