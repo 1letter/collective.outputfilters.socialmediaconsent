@@ -22,9 +22,11 @@ class Layer(PloneSandboxLayer):
         # Load any other ZCML that is required for your tests.
         # The z3c.autoinclude feature is disabled in the Plone fixture base
         # layer.
+
         self.loadZCML(package=collective.outputfilters.socialmediaconsent)
 
     def setUpPloneSite(self, portal):
+        applyProfile(portal, "Products.CMFPlone:dependencies")
         applyProfile(portal, "collective.outputfilters.socialmediaconsent:default")
         portal.portal_workflow.setDefaultChain("simple_publication_workflow")
 
