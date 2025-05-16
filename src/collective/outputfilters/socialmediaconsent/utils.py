@@ -1,4 +1,10 @@
+from collective.outputfilters.socialmediaconsent import CUSTOM_ATTRIBUTES
+from collective.outputfilters.socialmediaconsent import VALID_TAGS
+from plone.registry.interfaces import IRegistry
 from urllib.parse import urlparse
+from zope.component import getUtility
+
+import json
 
 
 def is_youtube_url(src):
@@ -11,3 +17,40 @@ def is_youtube_url(src):
         return True
 
     return False
+
+
+def set_registry_records():
+
+    registry = getUtility(IRegistry)
+
+    values = registry.records.get("plone.valid_tags").value
+    for valid_tag in VALID_TAGS:
+        if valid_tag not in values:
+            values.append(valid_tag)
+    values.sort()
+    registry.records["plone.valid_tags"].value = values
+
+    values = registry.records.get("plone.custom_attributes").value
+    for custom_attribute in CUSTOM_ATTRIBUTES:
+        if custom_attribute not in values:
+            values.append(custom_attribute)
+
+    values.sort()
+    registry.records["plone.custom_attributes"].value = values
+
+    values = registry.records.get("plone.other_settings").value
+    values = json.loads(values)
+    values.update(
+        {
+            "sandbox_iframes": True,
+            "sandbox_iframes_exclusions": [
+                "youtube.com",
+                "youtu.be",
+                "vimeo.com",
+                "player.vimeo.com",
+                "youtube-nocookie.com",
+            ],
+        }
+    )
+    values = json.dumps(values)
+    registry.records["plone.other_settings"].value = values
