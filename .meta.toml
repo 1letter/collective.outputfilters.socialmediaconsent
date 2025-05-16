@@ -1,9 +1,9 @@
 # Generated from:
-# https://github.com/plone/meta/tree/main/config/default
+# https://github.com/plone/meta/tree/main/src/plone/meta/default
 # See the inline comments on how to expand/tweak this configuration file
 [meta]
 template = "default"
-commit-id = "18642aac"
+commit-id = "2.0.1.dev0"
 
 [pyproject]
 codespell_skip = "*.min.js"
@@ -11,7 +11,7 @@ codespell_ignores = "vew"
 dependencies_mappings = [
   "beautifulsoup4 = ['bs4']",
 ]
-dependencies_ignores = "['plone.app.iterate', 'plone.app.upgrade', 'plone.volto', 'zestreleaser.towncrier', 'zest.releaser', 'pytest-cov','pytest', 'Products.Five']"
+dependencies_ignores = "['plone.app.iterate', 'plone.app.upgrade', 'plone.volto', 'zestreleaser.towncrier', 'zest.releaser', 'Products.Five']"
 
 [gitignore]
 extra_lines = """
@@ -27,23 +27,13 @@ forest.json
 """
 
 [tox]
-test_runner = "pytest"
-test_path = "/tests"
-use_mxdev = true
-test_deps_additional = ""
-constraints_file = "https://dist.plone.org/release/6.1-latest/constraints.txt"
-constrain_package_deps = true
+test_runner = "zope.testrunner"
+test_path = "/src"
+test_matrix = { "6.1" = ["3.13", "3.10"], "6.0" = ["3.13", "3.9"] }
+use_mxdev = false
+constraints_files = { "6.1" = "https://dist.plone.org/release/6.1-latest/constraints.txt", "6.0" = "https://dist.plone.org/release/6.0-latest/constraints.txt" }
 test_environment_variables = """
     zope_i18n_compile_mo_files=True
 """
 
 
-[github]
-py_versions = "[\"3.12\", \"3.11\", \"3.10\"]"
-jobs = [
-    "qa",
-    "test",
-    "coverage",
-    "dependencies",
-    "release_ready",
-    ]

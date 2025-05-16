@@ -7,16 +7,17 @@
      tal:omit-tag=""
      i18n:domain="collective.outpufilters.socialmediaconsent"
 >
-  <div class="form-check placeholder-socialmedia-consent"
-       data-html="${options/data_html}"
+  <div class="form-check placeholder-socialmedia-consent placeholder-socialmedia-consent-youtube"
+       data-cos="${options/cos}"
   >
-    <input class="form-check-input"
-           id="flexCheckDefault"
+    <input class="form-check-input socialmedia-consent-check socialmedia-consent-check-youtube"
+           id="check-youtube-${options/id}"
            type="checkbox"
            value="show"
     />
+
     <label class="form-check-label"
-           for="flexCheckDefault"
+           for="check-youtube-${options/id}"
            i18n:translate="consent_message_youtube"
     >...</label>
   </div>

@@ -52,29 +52,34 @@ setup(
     python_requires=">=3.8",
     install_requires=[
         "beautifulsoup4",
+        "plone.base",
         "plone.outputfilters",
-        "setuptools",
-        "Products.CMFPlone",
         "Products.CMFCore",
         "Products.GenericSetup",
+        "setuptools",
         "zope.i18nmessageid",
         "zope.interface",
         "zope.publisher",
+        "zope.component",
     ],
     extras_require={
         "test": [
-            "zest.releaser[recommended]",
-            "zestreleaser.towncrier",
+            "lxml",
+            "plone.app.textfield",
             "plone.app.testing",
             "plone.app.robotframework[debug]",
-            "pytest",
-            "pytest-cov",
-            "pytest-plone>=0.5.0",
+            "plone.base",
+            "plone.browserlayer",
+            "plone.testing",
+            "transaction",
+            "zest.releaser[recommended]",
+            "zestreleaser.towncrier",
         ],
     },
     entry_points="""
-    [z3c.autoinclude.plugin]
+    [plone.autoinclude.plugin]
     target = plone
+    module = collective.outputfilters.socialmediaconsent
     [console_scripts]
     update_locale = collective.outputfilters.socialmediaconsent.locales.update:update_locale
     """,
