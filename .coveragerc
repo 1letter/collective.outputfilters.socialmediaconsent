@@ -3,6 +3,7 @@ include =
     src/collective/outputfilters/*
 
 omit =
+    */test*
     */upgrades/*
     */locales/*
-    */upgrades/*
+
