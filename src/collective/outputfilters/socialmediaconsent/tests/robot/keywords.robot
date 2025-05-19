@@ -25,7 +25,7 @@ a Page with YouTube video
     Click    //button[@role="menuitem"]/span[contains(text(),"Insert")]
     Click    //div[contains(text(), "Media...")]
     Click    //div[@role="tab" and contains(text(), "Embed")]
-    Fill Text    //textarea[@data-mce-name="embed"]    ${YT_EMBEDDING_CODE}
+    Fill Text    //div[@class="tox-form"]//textarea[@data-mce-name="embed" or @class="tox-textarea"]    ${YT_EMBEDDING_CODE}
     Click    //button[@data-mce-name="Save"]
     Click    //button[@id="form-buttons-save"]
 
@@ -40,7 +40,7 @@ another Page with YouTube video
     Click    //button[@role="menuitem"]/span[contains(text(),"Insert")]
     Click    //div[contains(text(), "Media...")]
     Click    //div[@role="tab" and contains(text(), "Embed")]
-    Fill Text    //textarea[@data-mce-name="embed"]    ${YT_EMBEDDING_CODE}
+    Fill Text    //div[@class="tox-form"]//textarea[@data-mce-name="embed" or @class="tox-textarea"]   ${YT_EMBEDDING_CODE}
     Click    //button[@data-mce-name="Save"]
     Click    //button[@id="form-buttons-save"]
 
