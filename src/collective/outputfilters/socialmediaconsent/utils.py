@@ -19,6 +19,16 @@ def is_youtube_url(src):
     return False
 
 
+def is_thirdparty_url(src):
+
+    domain = urlparse(src).netloc.replace("www.", "")
+
+    if "emailsys1a.net" in domain:
+        return True
+
+    return False
+
+
 def set_registry_records():
 
     registry = getUtility(IRegistry)

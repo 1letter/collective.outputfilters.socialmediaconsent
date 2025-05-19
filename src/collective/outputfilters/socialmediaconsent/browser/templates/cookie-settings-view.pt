@@ -14,20 +14,44 @@
         <h2 i18n:translate="heading_cookie_settings">Your Cookie Settings</h2>
 
         <dl>
+
           <dt i18n:translate="">YouTube</dt>
 
-          <input class="form-check-input socialmedia-consent-check socialmedia-consent-check-youtube"
-                 id="check-youtube"
-                 type="checkbox"
-                 value="show"
-          />
+          <dd>
 
-          <label class="form-check-label"
-                 for="check-youtube"
-                 i18n:translate="cos_settings_youtube"
-          >I agree that content from YouTube may be displayed to me. I am aware that third-party cookies are used and expressly consent to their use.</label>
+            <div class="form-check">
+              <input class="form-check-input socialmedia-consent-check socialmedia-consent-check-youtube"
+                     id="check-youtube"
+                     type="checkbox"
+                     value="show"
+              />
 
+              <label class="form-check-label"
+                     for="check-youtube"
+                     i18n:translate="cos_settings_youtube"
+              >I agree that content from YouTube may be displayed to me. I am aware that third-party cookies are used and expressly consent to their use.</label>
+            </div>
 
+          </dd>
+
+          <dt i18n:translate="">Third Party Services</dt>
+
+          <dd>
+
+            <div class="form-check">
+              <input class="form-check-input socialmedia-consent-check socialmedia-consent-check-thirdparty"
+                     id="check-thirdparty"
+                     type="checkbox"
+                     value="show"
+              />
+
+              <label class="form-check-label"
+                     for="check-thirdparty"
+                     i18n:translate="cos_settings_thirdparty"
+              >I agree that content from Third Party Services may be displayed to me. I am aware that third-party cookies are used and expressly consent to their use.</label>
+            </div>
+
+          </dd>
         </dl>
 
       </metal:main_macro>
