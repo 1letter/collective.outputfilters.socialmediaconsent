@@ -11,6 +11,8 @@ include *.txt
 include *.yml
 include *.md
 include package.json
+recursive-include resources *.js
+exclude package-lock.json
 exclude .mrbob.ini
 exclude bobtemplate.cfg
 exclude *-mxdev.txt
