@@ -25,17 +25,14 @@ def set_registry_records():
 
     values = registry.records.get("plone.valid_tags").value
     for valid_tag in VALID_TAGS:
-        if valid_tag not in values:
-            values.append(valid_tag)
-    values.sort()
+        values.append(valid_tag)
+    values = list(set(values.sort()))
     registry.records["plone.valid_tags"].value = values
 
     values = registry.records.get("plone.custom_attributes").value
     for custom_attribute in CUSTOM_ATTRIBUTES:
-        if custom_attribute not in values:
-            values.append(custom_attribute)
-
-    values.sort()
+        values.append(custom_attribute)
+    values = list(set(values.sort()))
     registry.records["plone.custom_attributes"].value = values
 
     values = registry.records.get("plone.other_settings").value
