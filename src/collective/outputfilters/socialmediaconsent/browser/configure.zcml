@@ -1,6 +1,9 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
     xmlns:plone="http://namespaces.plone.org/plone"
+    xmlns:z3c="http://namespaces.zope.org/z3c"
+    xmlns:zcml="http://namespaces.zope.org/zcml"
     >
 
   <plone:static
@@ -8,5 +11,16 @@
       name="collective.outputfilters.socialmediaconsent"
       type="plone"
       />
+
+  <!-- View to manage cookie settings -->
+  <browser:page
+      name="cos-cookie-settings"
+      for="plone.base.interfaces.IPloneSiteRoot"
+      class=".views.CookieSettingsView"
+      template="templates/cookie-settings-view.pt"
+      permission="zope2.View"
+      layer="collective.outputfilters.socialmediaconsent.interfaces.IBrowserLayer"
+      />
+
 
 </configure>

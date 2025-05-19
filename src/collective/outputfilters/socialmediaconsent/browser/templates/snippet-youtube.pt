@@ -5,20 +5,20 @@
      lang="en"
      xml:lang="en"
      tal:omit-tag=""
-     i18n:domain="collective.outpufilters.socialmediaconsent"
+     i18n:domain="collective.outputfilters.socialmediaconsent"
 >
   <div class="form-check placeholder-socialmedia-consent placeholder-socialmedia-consent-youtube"
        data-cos="${options/cos}"
   >
     <input class="form-check-input socialmedia-consent-check socialmedia-consent-check-youtube"
-           id="check-youtube-${options/id}"
+           id="check-youtube"
            type="checkbox"
            value="show"
     />
 
     <label class="form-check-label"
-           for="check-youtube-${options/id}"
-           i18n:translate="consent_message_youtube"
-    >...</label>
+           for="check-youtube"
+           i18n:translate="cos_settings_youtube"
+    >I agree that content from YouTube may be displayed to me. I am aware that third-party cookies are used and expressly consent to their use.</label>
   </div>
 </div>

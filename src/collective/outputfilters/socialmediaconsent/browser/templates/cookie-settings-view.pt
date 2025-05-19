@@ -1,0 +1,37 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      lang="en"
+      metal:use-macro="here/main_template/macros/master"
+      xml:lang="en"
+      i18n:domain="collective.outputfilters.socialmediaconsent"
+>
+  <body>
+
+    <metal:content-core fill-slot="content-core">
+      <metal:main_macro define-macro="content-core">
+        <h2 i18n:translate="heading_cookie_settings">Your Cookie Settings</h2>
+
+        <dl>
+          <dt i18n:translate="">YouTube</dt>
+
+          <input class="form-check-input socialmedia-consent-check socialmedia-consent-check-youtube"
+                 id="check-youtube"
+                 type="checkbox"
+                 value="show"
+          />
+
+          <label class="form-check-label"
+                 for="check-youtube"
+                 i18n:translate="cos_settings_youtube"
+          >I agree that content from YouTube may be displayed to me. I am aware that third-party cookies are used and expressly consent to their use.</label>
+
+
+        </dl>
+
+      </metal:main_macro>
+    </metal:content-core>
+
+  </body>
+</html>
