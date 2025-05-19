@@ -26,13 +26,15 @@ def set_registry_records():
     values = registry.records.get("plone.valid_tags").value
     for valid_tag in VALID_TAGS:
         values.append(valid_tag)
-    values = list(set(values.sort()))
+    values.sort()
+    values = list(set(values))
     registry.records["plone.valid_tags"].value = values
 
     values = registry.records.get("plone.custom_attributes").value
     for custom_attribute in CUSTOM_ATTRIBUTES:
         values.append(custom_attribute)
-    values = list(set(values.sort()))
+    values.sort()
+    values = list(set(values))
     registry.records["plone.custom_attributes"].value = values
 
     values = registry.records.get("plone.other_settings").value
