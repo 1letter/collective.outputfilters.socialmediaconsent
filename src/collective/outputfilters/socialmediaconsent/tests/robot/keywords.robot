@@ -26,7 +26,7 @@ a Page with YouTube video
     Click    //div[contains(text(), "Media...")]
     Click    //div[@role="tab" and contains(text(), "Embed")]
     Fill Text    //div[@class="tox-form"]//textarea[@data-mce-name="embed" or @class="tox-textarea"]    ${YT_EMBEDDING_CODE}
-    Click    //button[@data-mce-name="Save"]
+    Click    //button[@data-mce-name="Save" or (@title="Save" and @class="tox-button")]
     Click    //button[@id="form-buttons-save"]
 
 another Page with YouTube video
@@ -41,7 +41,7 @@ another Page with YouTube video
     Click    //div[contains(text(), "Media...")]
     Click    //div[@role="tab" and contains(text(), "Embed")]
     Fill Text    //div[@class="tox-form"]//textarea[@data-mce-name="embed" or @class="tox-textarea"]   ${YT_EMBEDDING_CODE}
-    Click    //button[@data-mce-name="Save"]
+    Click    //button[@data-mce-name="Save" or (@title="Save" and @class="tox-button")]
     Click    //button[@id="form-buttons-save"]
 
 I go to another Page
