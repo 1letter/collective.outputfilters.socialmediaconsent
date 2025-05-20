@@ -1,4 +1,5 @@
 from collective.outputfilters.socialmediaconsent import CUSTOM_ATTRIBUTES
+from collective.outputfilters.socialmediaconsent import NASTY_TAGS
 from collective.outputfilters.socialmediaconsent import VALID_TAGS
 from plone import api
 from plone.registry.interfaces import IRegistry
@@ -43,16 +44,20 @@ def set_registry_records():
     values = registry.records.get("plone.valid_tags").value
     for valid_tag in VALID_TAGS:
         values.append(valid_tag)
-    values.sort()
-    values = list(set(values))
+    values = sorted(list(set(values)))
     registry.records["plone.valid_tags"].value = values
 
     values = registry.records.get("plone.custom_attributes").value
     for custom_attribute in CUSTOM_ATTRIBUTES:
         values.append(custom_attribute)
-    values.sort()
-    values = list(set(values))
+    values = sorted(list(set(values)))
     registry.records["plone.custom_attributes"].value = values
+
+    values = registry.records.get("plone.nasty_tags").value
+    for nasty_tag in NASTY_TAGS:
+        values.remove(nasty_tag)
+    values = sorted(list(set(values)))
+    registry.records["plone.nasty_tags"].value = values
 
     values = registry.records.get("plone.other_settings").value
     values = json.loads(values)

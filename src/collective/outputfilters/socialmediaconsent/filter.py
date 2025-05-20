@@ -65,4 +65,20 @@ class SocialMediaConsentFilter:
 
             element.replace_with(tag)
 
+        # transform all third-party blocks
+        # [<div class="thirdparty-block"><script type="text/javascript" src="https://xxx"></script><noscript>Bitte Javascript aktivieren</noscript><a target="_blank" href="https://www.xxx"><img border="0" style="border: 0 !important" src="https:/xxx.png" alt="FundraisingBox Logo" /></a></div>]
+        elements = soup.find_all("div", "thirdparty-block")
+
+        for element in elements:
+
+            snippet = ViewPageTemplateFile("browser/templates/snippet-thirdparty.pt")(
+                self,
+                cos=json.dumps({"markup": str(element), "consent": "third_party"}),
+                id=uuid1(),
+            )
+
+            tag = BeautifulSoup(snippet, "html.parser")
+
+            element.replace_with(tag)
+
         return str(soup)

@@ -42,6 +42,7 @@ class TestSetup(unittest.TestCase):
 
     def test_registry_values(self):
         from collective.outputfilters.socialmediaconsent import CUSTOM_ATTRIBUTES
+        from collective.outputfilters.socialmediaconsent import NASTY_TAGS
         from collective.outputfilters.socialmediaconsent import VALID_TAGS
         from plone.registry.interfaces import IRegistry
         from zope.component import getUtility
@@ -55,6 +56,15 @@ class TestSetup(unittest.TestCase):
         for valid_tag in VALID_TAGS:
             self.assertIn(
                 valid_tag, record.value, f"{valid_tag} should be in 'plone.valid_tags'"
+            )
+
+        # test plone.nasty_tags
+        record = registry.records.get("plone.nasty_tags")
+        for nasty_tag in NASTY_TAGS:
+            self.assertNotIn(
+                nasty_tag,
+                record.value,
+                f"{nasty_tag} should not be in 'plone.nasty_tags'",
             )
 
         # test plone.custom_attributes
