@@ -24,6 +24,7 @@ function cos_init(event){
   // check if cookie exists, then replace
   // replace all placeholders with the markup from the contentfilter
   update_markup()
+
 }
 
 function cookiehandling(){
@@ -97,11 +98,13 @@ function hide(consent){
 function update_markup(){
 
   let markupElements = document.querySelectorAll("div[data-cos]");
+
   markupElements.forEach((markupElement) => {
     let options = JSON.parse(markupElement.dataset.cos)
     let old_markup = markupElement.innerHTML
     let new_markup = options.markup
     let consent_type = options.consent
+
     Object.keys(Consent).forEach((key) => {
       if(key == consent_type && Consent[key].value == SHOW){
         markupElement.innerHTML = new_markup
