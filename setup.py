@@ -52,6 +52,7 @@ setup(
     python_requires=">=3.8",
     install_requires=[
         "beautifulsoup4",
+        "plone.api",
         "plone.base",
         "plone.outputfilters",
         "Products.CMFCore",
@@ -65,7 +66,6 @@ setup(
     extras_require={
         "test": [
             "lxml",
-            "plone.api",
             "plone.app.textfield",
             "plone.app.testing",
             "plone.app.robotframework[debug]",
