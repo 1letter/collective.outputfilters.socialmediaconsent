@@ -1,5 +1,6 @@
 from collective.outputfilters.socialmediaconsent import CUSTOM_ATTRIBUTES
 from collective.outputfilters.socialmediaconsent import VALID_TAGS
+from plone import api
 from plone.registry.interfaces import IRegistry
 from urllib.parse import urlparse
 from zope.component import getUtility
@@ -9,11 +10,13 @@ import json
 
 def is_youtube_url(src):
 
+    valid_domains = api.portal.get_registry_record(
+        "collective.outputfilters.socialmediaconsent.valid_domains"
+    ).get("youtube")
+
     domain = urlparse(src).netloc.replace("www.", "")
 
-    if "youtube-nocookie.com" in domain:
-        return True
-    if "youtube.com" in domain:
+    if domain in valid_domains:
         return True
 
     return False
@@ -21,9 +24,13 @@ def is_youtube_url(src):
 
 def is_thirdparty_url(src):
 
+    valid_domains = api.portal.get_registry_record(
+        "collective.outputfilters.socialmediaconsent.valid_domains"
+    ).get("thirdparty")
+
     domain = urlparse(src).netloc.replace("www.", "")
 
-    if "emailsys1a.net" in domain:
+    if domain in valid_domains:
         return True
 
     return False
