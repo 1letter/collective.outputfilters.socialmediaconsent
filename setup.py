@@ -65,6 +65,7 @@ setup(
     extras_require={
         "test": [
             "lxml",
+            "plone.api",
             "plone.app.textfield",
             "plone.app.testing",
             "plone.app.robotframework[debug]",
