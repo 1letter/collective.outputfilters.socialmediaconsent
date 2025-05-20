@@ -73,7 +73,7 @@ target-version = ["py38"]
 ##
 
 [tool.codespell]
-ignore-words-list = "discreet,assertin,thet,vew"
+ignore-words-list = "discreet,assertin,thet,vew,thirdparty"
 skip = "*.po,*.min.js"
 ##
 # Add extra configuration options in .meta.toml:

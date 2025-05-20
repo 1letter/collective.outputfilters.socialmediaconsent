@@ -7,7 +7,7 @@ commit-id = "2.0.1.dev0"
 
 [pyproject]
 codespell_skip = "*.min.js"
-codespell_ignores = "vew"
+codespell_ignores = "vew,thirdparty"
 dependencies_mappings = [
   "beautifulsoup4 = ['bs4']",
 ]
