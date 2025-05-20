@@ -4,7 +4,7 @@
 # WSGI_SERVER_HOST=localhost WSGI_SERVER_PORT=50003 robot-server collective.outputfilters.socialmediaconsent.testing.ACCEPTANCE_TESTING
 #
 # Start the test
-# WSGI_SERVER_HOST=localhost WSGI_SERVER_PORT=50003 robot src/collective/outputfilters/socialmediaconsent/tests/robot/test_cookie_settings.robot
+# WSGI_SERVER_HOST=localhost WSGI_SERVER_PORT=50003 robot src/collective/outputfilters/socialmediaconsent/tests/robot/test_youtube_cookie.robot
 #
 
 ** Settings ***
@@ -29,27 +29,33 @@ ${BROWSER}    chromium
 
 *** Test Cases ***
 
-Scenario: Cookie activate on settings
+Scenario: Cookie is not set
+    Given a logged-in manager
+      and a Page with YouTube video
+     When I go to Page
+     Then the cookie is unset
+      and I see the consent box
+      and I dont see the video
+
+Scenario: Cookie setting - Consentbox is available
+    Given a logged-in manager
+      and a Page with YouTube video
+     When I go to Page
+      and I click consent youtube
+     Then the cookie is set
+      and I see the video
+
+Scenario: Cookie is set - Video on the other page is present
     Given a logged-in manager
       and a Page with YouTube video
       and another Page with YouTube video
-     When I go to Cookie Settings Page
-     Then the cookie is unset
-
      When I go to Page
-     Then the cookie is unset
-
-     When I go to Cookie Settings Page
       and I click consent youtube
-     Then the cookie is set
-
-     When I go to Page
      Then the cookie is set
       and I see the video
 
      When I go to another Page
-     Then the cookie is set
-      and I see the video
+     Then I see the video
 
 *** Keywords ***
 
@@ -81,9 +87,6 @@ I go to Page
 I go to another Page
     Go to  ${PLONE_URL}/${ANOTHER_TEST_PAGE}
 
-I go to Cookie Settings Page
-    Go to  ${PLONE_URL}/cos-cookie-settings
-
 the cookie is unset
     ${cookie}=    Get Cookie    ${COOKIENAME_YOUTUBE}
     Should Be Equal    ${cookie.value}    0
@@ -93,8 +96,20 @@ I click consent youtube
 
 # THEN
 
+I see the consent box
+    Get Element Count    //div[contains(@class, "placeholder-socialmedia-consent-youtube")]    equal    1
+
+I see the consent confirm check
+    Get Element Count    //div[contains(@class, "socialmedia-consent-check-youtube")]    equal    1
+
+I dont see the consent confirm check
+    Get Element Count    //div[contains(@class, "socialmedia-consent-check-youtube")]    equal    0
+
 I see the video
     Get Element Count    //div[contains(@class, "placeholder-socialmedia-consent")]/iframe    equal    1
+
+I dont see the video
+    Get Element Count    //div[contains(@class, "placeholder-socialmedia-consent")]/iframe    equal    0
 
 the cookie is set
     ${cookie}=    Get Cookie    ${COOKIENAME_YOUTUBE}

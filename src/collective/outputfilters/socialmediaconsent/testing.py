@@ -8,8 +8,10 @@ from plone.app.testing import SITE_OWNER_NAME
 from plone.app.testing import SITE_OWNER_PASSWORD
 from plone.app.testing import TEST_USER_NAME
 from plone.app.testing import TEST_USER_PASSWORD
+from plone.registry.interfaces import IRegistry
 from plone.testing.zope import Browser
 from plone.testing.zope import WSGI_SERVER_FIXTURE
+from zope.component import getUtility
 
 import collective.outputfilters.socialmediaconsent
 import unittest
@@ -29,6 +31,19 @@ class Layer(PloneSandboxLayer):
         applyProfile(portal, "Products.CMFPlone:dependencies")
         applyProfile(portal, "collective.outputfilters.socialmediaconsent:default")
         portal.portal_workflow.setDefaultChain("simple_publication_workflow")
+
+        # set registry values for testing
+        registry = getUtility(IRegistry)
+
+        # setup the registry
+        # set the registry record for tests
+        valid_domains = {
+            "youtube": ["youtube-nocookie.com", "youtube.com"],
+            "thirdparty": ["plone.org"],
+        }
+        registry["collective.outputfilters.socialmediaconsent.valid_domains"] = (
+            valid_domains
+        )
 
 
 FIXTURE = Layer()
