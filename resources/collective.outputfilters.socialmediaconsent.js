@@ -9,7 +9,7 @@ let Consent = {
   },
   third_party: {
     value : HIDE,
-    name : "cos-thitdparty-consent",
+    name : "cos-thirdparty-consent",
     cbx : "check-thirdparty"
   },
 }
