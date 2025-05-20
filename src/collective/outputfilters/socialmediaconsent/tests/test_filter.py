@@ -1,4 +1,5 @@
 from collective.outputfilters.socialmediaconsent.testing import BaseFunctionalTest
+from plone import api
 from plone.app.testing import setRoles
 from plone.app.testing import TEST_USER_ID
 from plone.app.textfield.value import RichTextValue
@@ -34,6 +35,16 @@ class TestFilterFunctional(BaseFunctionalTest):
         self.portal.invokeFactory("Document", "doc2")
         self.portal.doc2.text = RichTextValue(
             TINYMCE_MARKUP_NO_PLUGIN, "text/html", "text/x-html-safe"
+        )
+
+        # setup the registry
+        # set the registry record for tests
+        valid_domains = {
+            "youtube": ["youtube-nocookie.com", "youtube.com"],
+            "thirdparty": ["plone.org"],
+        }
+        api.portal.set_registry_record(
+            "collective.outputfilters.socialmediaconsent.valid_domains", valid_domains
         )
 
     def test_filter_with_plugin_markup(self):
