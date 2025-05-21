@@ -15,7 +15,7 @@
   <!-- View to manage cookie settings -->
   <browser:page
       name="cos-cookie-settings"
-      for="plone.base.interfaces.IPloneSiteRoot"
+      for="plone.base.interfaces.INavigationRoot"
       class=".views.CookieSettingsView"
       template="templates/cookie-settings-view.pt"
       permission="zope2.View"

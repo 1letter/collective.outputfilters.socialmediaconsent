@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-05-19 12:31+0000\n"
+"POT-Creation-Date: 2025-05-21 12:29+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,6 +16,11 @@ msgstr ""
 "Language-Name: English\n"
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: collective.outputfilters.socialmediaconsent\n"
+
+#: collective/outputfilters/socialmediaconsent/browser/templates/snippet-thirdparty.pt:23
+#: collective/outputfilters/socialmediaconsent/browser/templates/snippet-youtube.pt:23
+msgid "My Cookie Settings"
+msgstr ""
 
 #: collective/outputfilters/socialmediaconsent/profiles.zcml:14
 msgid "Package to configure a new Social Embedding Consent Outputfilter site"
@@ -29,7 +34,7 @@ msgstr ""
 msgid "Social Embedding Consent Outputfilter: Uninstall"
 msgstr ""
 
-#: collective/outputfilters/socialmediaconsent/browser/templates/cookie-settings-view.pt:33
+#: collective/outputfilters/socialmediaconsent/browser/templates/cookie-settings-view.pt:37
 msgid "Third Party Services"
 msgstr ""
 
@@ -42,13 +47,13 @@ msgid "YouTube"
 msgstr ""
 
 #. Default: "I agree that content from Third Party Services may be displayed to me. I am aware that third-party cookies are used and expressly consent to their use."
-#: collective/outputfilters/socialmediaconsent/browser/templates/cookie-settings-view.pt:41
+#: collective/outputfilters/socialmediaconsent/browser/templates/cookie-settings-view.pt:48
 #: collective/outputfilters/socialmediaconsent/browser/templates/snippet-thirdparty.pt:19
 msgid "cos_settings_thirdparty"
 msgstr ""
 
 #. Default: "I agree that content from YouTube may be displayed to me. I am aware that third-party cookies are used and expressly consent to their use."
-#: collective/outputfilters/socialmediaconsent/browser/templates/cookie-settings-view.pt:27
+#: collective/outputfilters/socialmediaconsent/browser/templates/cookie-settings-view.pt:29
 #: collective/outputfilters/socialmediaconsent/browser/templates/snippet-youtube.pt:19
 msgid "cos_settings_youtube"
 msgstr ""

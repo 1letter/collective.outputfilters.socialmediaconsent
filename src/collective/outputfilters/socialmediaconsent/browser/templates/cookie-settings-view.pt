@@ -9,9 +9,22 @@
 >
   <body>
 
+
+    <metal:content-title fill-slot="content-title">
+      <metal:content-title define-macro="content-title">
+
+        <h1 class="documentFirstHeading"
+            i18n:translate="heading_cookie_settings"
+        >
+          My Cookie Settings
+        </h1>
+
+
+      </metal:content-title>
+    </metal:content-title>
+
     <metal:content-core fill-slot="content-core">
       <metal:main_macro define-macro="content-core">
-        <h2 i18n:translate="heading_cookie_settings">Your Cookie Settings</h2>
 
         <dl>
 

@@ -20,6 +20,8 @@
            for="check-thirdparty"
            i18n:translate="cos_settings_thirdparty"
     >I agree that content from Third Party Services may be displayed to me. I am aware that third-party cookies are used and expressly consent to their use.</label>
-
+    <a href="${options/settings_url}"
+       i18n:translate=""
+    >My Cookie Settings</a>
   </div>
 </div>
