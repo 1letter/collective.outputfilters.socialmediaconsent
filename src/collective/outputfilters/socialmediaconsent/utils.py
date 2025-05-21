@@ -55,6 +55,8 @@ def set_registry_records():
 
     values = registry.records.get("plone.nasty_tags").value
     for nasty_tag in NASTY_TAGS:
+        if nasty_tag not in values:
+            continue
         values.remove(nasty_tag)
     values = sorted(list(set(values)))
     registry.records["plone.nasty_tags"].value = values
