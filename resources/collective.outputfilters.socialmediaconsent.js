@@ -109,6 +109,7 @@ function update_markup(){
       if(key == consent_type && Consent[key].value == SHOW){
         markupElement.innerHTML = new_markup
         options.markup = old_markup
+        markupElement.classList.remove("placeholder-socialmedia-consent");
       }
     });
   });
