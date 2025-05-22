@@ -1,0 +1,74 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      lang="en"
+      metal:use-macro="here/main_template/macros/master"
+      xml:lang="en"
+      i18n:domain="collective.outputfilters.socialmediaconsent"
+>
+  <body>
+
+
+    <metal:content-title fill-slot="content-title">
+      <metal:content-title define-macro="content-title">
+
+        <h1 class="documentFirstHeading"
+            i18n:translate="heading_cookie_settings"
+        >
+          My Cookie Settings
+        </h1>
+
+
+      </metal:content-title>
+    </metal:content-title>
+
+    <metal:content-core fill-slot="content-core">
+      <metal:main_macro define-macro="content-core">
+
+        <dl>
+
+          <dt i18n:translate="">YouTube</dt>
+
+          <dd>
+
+            <div class="form-check">
+              <input class="form-check-input socialmedia-consent-check socialmedia-consent-check-youtube"
+                     id="check-youtube"
+                     type="checkbox"
+                     value="show"
+              />
+
+              <label class="form-check-label"
+                     for="check-youtube"
+                     i18n:translate="cos_settings_youtube"
+              >I agree that content from YouTube may be displayed to me. I am aware that third-party cookies are used and expressly consent to their use.</label>
+            </div>
+
+          </dd>
+
+          <dt i18n:translate="">Third Party Services</dt>
+
+          <dd>
+
+            <div class="form-check">
+              <input class="form-check-input socialmedia-consent-check socialmedia-consent-check-thirdparty"
+                     id="check-thirdparty"
+                     type="checkbox"
+                     value="show"
+              />
+
+              <label class="form-check-label"
+                     for="check-thirdparty"
+                     i18n:translate="cos_settings_thirdparty"
+              >I agree that content from Third Party Services may be displayed to me. I am aware that third-party cookies are used and expressly consent to their use.</label>
+            </div>
+
+          </dd>
+        </dl>
+
+      </metal:main_macro>
+    </metal:content-core>
+
+  </body>
+</html>

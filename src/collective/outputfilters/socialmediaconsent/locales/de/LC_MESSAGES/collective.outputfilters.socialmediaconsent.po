@@ -1,0 +1,61 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2025-05-21 12:29+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: DOMAIN\n"
+
+#: collective/outputfilters/socialmediaconsent/browser/templates/snippet-thirdparty.pt:23
+#: collective/outputfilters/socialmediaconsent/browser/templates/snippet-youtube.pt:23
+msgid "My Cookie Settings"
+msgstr "Cookie Einstellungen"
+
+#: collective/outputfilters/socialmediaconsent/profiles.zcml:14
+msgid "Package to configure a new Social Embedding Consent Outputfilter site"
+msgstr ""
+
+#: collective/outputfilters/socialmediaconsent/profiles.zcml:14
+msgid "Social Embedding Consent Outputfilter: Install"
+msgstr ""
+
+#: collective/outputfilters/socialmediaconsent/profiles.zcml:22
+msgid "Social Embedding Consent Outputfilter: Uninstall"
+msgstr ""
+
+#: collective/outputfilters/socialmediaconsent/browser/templates/cookie-settings-view.pt:37
+msgid "Third Party Services"
+msgstr "Drittanbieter Services"
+
+#: collective/outputfilters/socialmediaconsent/profiles.zcml:22
+msgid "Uninstall Social Embedding Consent Outputfilter setup."
+msgstr ""
+
+#: collective/outputfilters/socialmediaconsent/browser/templates/cookie-settings-view.pt:18
+msgid "YouTube"
+msgstr "YouTube"
+
+#. Default: "I agree that content from Third Party Services may be displayed to me. I am aware that third-party cookies are used and expressly consent to their use."
+#: collective/outputfilters/socialmediaconsent/browser/templates/cookie-settings-view.pt:48
+#: collective/outputfilters/socialmediaconsent/browser/templates/snippet-thirdparty.pt:19
+msgid "cos_settings_thirdparty"
+msgstr "Ich bin damit einverstanden, dass mir Inhalte von Drittanbieter Services angezeigt werden. Ich bin mir darüber im Klaren, das Drittanbietercookies verwendet werden und stimme der Verwendung ausdrücklich zu."
+
+#. Default: "I agree that content from YouTube may be displayed to me. I am aware that third-party cookies are used and expressly consent to their use."
+#: collective/outputfilters/socialmediaconsent/browser/templates/cookie-settings-view.pt:29
+#: collective/outputfilters/socialmediaconsent/browser/templates/snippet-youtube.pt:19
+msgid "cos_settings_youtube"
+msgstr "Ich bin damit einverstanden, dass mir Inhalte von YouTube angezeigt werden. Ich bin mir darüber im Klaren, das Drittanbietercookies verwendet werden und stimme der Verwendung ausdrücklich zu."
+
+#. Default: "Your Cookie Settings"
+#: collective/outputfilters/socialmediaconsent/browser/templates/cookie-settings-view.pt:14
+msgid "heading_cookie_settings"
+msgstr "Cookie Einstellungen"

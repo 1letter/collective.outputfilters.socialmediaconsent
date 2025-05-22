@@ -57,6 +57,8 @@ robot_report.html
 forest.dot
 forest.json
 .lock
+playwright-log.txt
+Scenario*
 
 ##
 # Add extra configuration options in .meta.toml:

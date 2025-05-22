@@ -52,6 +52,7 @@ setup(
     python_requires=">=3.8",
     install_requires=[
         "beautifulsoup4",
+        "plone.api",
         "plone.base",
         "plone.outputfilters",
         "Products.CMFCore",
@@ -71,6 +72,7 @@ setup(
             "plone.base",
             "plone.browserlayer",
             "plone.testing",
+            "robotsuite",
             "transaction",
             "zest.releaser[recommended]",
             "zestreleaser.towncrier",

@@ -7,4 +7,34 @@
     <value key="jscompilation">++plone++collective.outputfilters.socialmediaconsent/collective.outputfilters.socialmediaconsent.min.js</value>
     <value key="load_async">True</value>
   </records>
+
+  <record name="collective.outputfilters.socialmediaconsent.valid_domains">
+
+    <field type="plone.registry.field.Dict">
+
+      <title>Valid URLs for iframes</title>
+
+      <key_type type="plone.registry.field.TextLine">
+        <title>Section</title>
+      </key_type>
+
+      <value_type type="plone.registry.field.List">
+
+        <title>URLs</title>
+
+        <value_type type="plone.registry.field.TextLine">
+          <title>URL</title>
+        </value_type>
+
+      </value_type>
+    </field>
+
+    <value purge="False">
+      <element key="youtube" />
+      <element key="thirdparty" />
+    </value>
+
+  </record>
+
+
 </registry>

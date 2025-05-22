@@ -11,12 +11,15 @@ include *.txt
 include *.yml
 include *.md
 include package.json
+recursive-include resources *.js
+exclude package-lock.json
 exclude .mrbob.ini
 exclude bobtemplate.cfg
 exclude *-mxdev.txt
 exclude Dockerfile
 exclude mx.ini
 exclude Makefile
+exclude playwright-log.txt
 recursive-exclude frontend *
 exclude instance.yaml
 global-exclude *.pyc

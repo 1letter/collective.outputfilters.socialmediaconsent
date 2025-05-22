@@ -7,19 +7,19 @@
      tal:omit-tag=""
      i18n:domain="collective.outputfilters.socialmediaconsent"
 >
-  <div class="form-check placeholder-socialmedia-consent placeholder-socialmedia-consent-youtube"
+  <div class="form-check placeholder-socialmedia-consent placeholder-socialmedia-consent-thirdparty"
        data-cos="${options/cos}"
   >
-    <input class="form-check-input socialmedia-consent-check socialmedia-consent-check-youtube"
-           id="check-youtube"
+    <input class="form-check-input socialmedia-consent-check socialmedia-consent-check-thirdparty"
+           id="check-thirdparty"
            type="checkbox"
            value="show"
     />
 
     <label class="form-check-label"
-           for="check-youtube"
-           i18n:translate="cos_settings_youtube"
-    >I agree that content from YouTube may be displayed to me. I am aware that third-party cookies are used and expressly consent to their use.</label>
+           for="check-thirdparty"
+           i18n:translate="cos_settings_thirdparty"
+    >I agree that content from Third Party Services may be displayed to me. I am aware that third-party cookies are used and expressly consent to their use.</label>
     <a href="${options/settings_url}"
        i18n:translate=""
     >My Cookie Settings</a>

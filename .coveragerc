@@ -1,7 +1,9 @@
 [report]
+include =
+    src/collective/outputfilters/*
+
 omit =
+    */test*
     */upgrades/*
     */locales/*
 
-[html]
-directory = report

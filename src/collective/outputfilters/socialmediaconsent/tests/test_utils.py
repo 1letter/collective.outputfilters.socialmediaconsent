@@ -40,3 +40,25 @@ class TestUtils(unittest.TestCase):
                 result == expected,
                 f"check for: {url} should be {expected}, bur extract_domain_from_url returns: {result}",
             )
+
+    def test_is_thirdparty_url(self):
+        from collective.outputfilters.socialmediaconsent.utils import is_thirdparty_url
+
+        checks = [
+            ("https://plone.org", True),
+            ("http://plone.org", True),
+            ("https://www.plone.org", True),
+            ("http://www.plone.org", True),
+            ("https://plone.de", False),
+            ("http://www.plone.de", False),
+            ("https://www.plone.de", False),
+            ("https:/www.plone.org", False),
+            ("www.plone.org", False),
+        ]
+
+        for url, expected in checks:
+            result = is_thirdparty_url(url)
+            self.assertTrue(
+                result == expected,
+                f"check for: {url} should be {expected}, bur extract_domain_from_url returns: {result}",
+            )
