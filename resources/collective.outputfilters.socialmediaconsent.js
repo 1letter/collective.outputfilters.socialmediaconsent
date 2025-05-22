@@ -52,7 +52,7 @@ function cookiehandling(){
       // set the cookie with default value (HIDE)
       // this disable the rendering of youtube video iframes
       Consent[key].value = HIDE;
-      document.cookie = Consent[key].name+"="+HIDE+";Secure;path=/";
+      document.cookie = Consent[key].name+"="+HIDE+";path=/;SameSite=Strict;";
     }
 
     // handle the checkboxes, if the cookie is set, enable the checkboxes
@@ -87,12 +87,12 @@ function set_consent(event){
 
 function show(consent){
   consent.value = SHOW;
-  document.cookie = consent.name+"="+consent.value+";Secure;path=/";
+  document.cookie = consent.name+"="+consent.value+";path=/;SameSite=Strict;";
 }
 
 function hide(consent){
   consent.value = HIDE;
-  document.cookie = consent.name+"="+consent.value+";Secure;path=/";
+  document.cookie = consent.name+"="+consent.value+";path=/;SameSite=Strict;";
 }
 
 function update_markup(){
@@ -106,6 +106,7 @@ function update_markup(){
     let consent_type = options.consent
 
     Object.keys(Consent).forEach((key) => {
+      console.log(Consent[key], key, consent_type, Consent[key].value)
       if(key == consent_type && Consent[key].value == SHOW){
         markupElement.innerHTML = new_markup
         options.markup = old_markup
